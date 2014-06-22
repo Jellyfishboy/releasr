@@ -1,0 +1,26 @@
+# Release Documentation
+#
+# The accessory table allows administrators to add additional items to a product and it's overall price.
+# A product can have many accessories. The weight of accessories effects the end shipping calculation.
+
+# == Schema Information
+#
+# Table name: releases
+#
+#  id                   :integer          not null, primary key
+#  name                 :string(255)      
+#  slug                 :string(255)  
+#  description          :text          
+#  project_id           :integer          
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#
+class Release < ActiveRecord::Base
+
+    belongs_to :project
+
+    default_scope { order('created_at DESC') }
+
+    extend FriendlyId
+    friendly_id :name, use: [:slugged, :finders]
+end

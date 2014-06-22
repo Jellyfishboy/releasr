@@ -1,0 +1,24 @@
+%h1 Listing projects
+
+%table
+  %tr
+    %th Name
+    %th Website
+    %th Github
+    %th
+    %th
+    %th
+
+  - @projects.each do |project|
+    %tr
+      %td= project.name
+      %td= project.website
+      %td= project.github
+      %td= link_to 'Show', project
+      %td= link_to 'Releases', admin_project_releases_path(project)
+      %td= link_to 'Edit', edit_admin_project_path(project)
+      %td= link_to 'Destroy', project, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Project', new_admin_project_path

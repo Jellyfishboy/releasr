@@ -1,0 +1,21 @@
+%h1 Listing releases
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th
+    %th
+    %th
+
+  - @releases.each do |release|
+    %tr
+      %td= release.name
+      %td= release.description
+      %td= link_to 'Show', [release.project, release]
+      %td= link_to 'Edit', edit_admin_project_release_path(release.project, release)
+      %td= link_to 'Destroy', admin_project_release_path(release.project, release), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Release', new_admin_project_release_path
