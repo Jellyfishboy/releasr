@@ -1,5 +1,6 @@
-%h1 Listing releases
+%h1= "#{@project.name} releases"
 
+= link_to 'New Release', new_admin_project_release_path, :class => 'btn btn-success'
 %table
   %tr
     %th Name
@@ -10,12 +11,9 @@
 
   - @releases.each do |release|
     %tr
-      %td= release.name
-      %td= release.description
-      %td= link_to 'Show', [release.project, release]
-      %td= link_to 'Edit', edit_admin_project_release_path(release.project, release)
-      %td= link_to 'Destroy', admin_project_release_path(release.project, release), :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to release.name, [release.project, release]
+      %td= raw(release.description)
+      %td.btn.btn-success= link_to 'Edit', edit_admin_project_release_path(release.project, release)
+      %td.btn.btn-danger= link_to 'Destroy', admin_project_release_path(release.project, release), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
 
-= link_to 'New Release', new_admin_project_release_path

@@ -19,6 +19,9 @@ class Release < ActiveRecord::Base
 
     belongs_to :project
 
+    validates :name, :description,                  presence: true
+    validates :description,                         length: { minimum: 10, message: :too_short }
+
     default_scope { order('created_at DESC') }
 
     extend FriendlyId

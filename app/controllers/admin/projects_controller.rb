@@ -35,6 +35,7 @@ class Admin::ProjectsController < ApplicationController
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
   def update
+    @project.slug = nil
     respond_to do |format|
       if @project.update(project_params)
         format.html { redirect_to admin_projects_path, notice: 'Project was successfully updated.' }

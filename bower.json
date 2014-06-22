@@ -1,0 +1,21 @@
+{
+  "name": "releasr",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Jellyfishboy/releasr",
+  "authors": [
+    "JellyFishBoy <tom.alan.dallimore@googlemail.com>"
+  ],
+  "description": "Simple release notes application, which has been designed to work with the Atlassian JIRA release engine.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1"
+  }
+}

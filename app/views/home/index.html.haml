@@ -1,7 +1,7 @@
 - @projects.each do |project|
     
     = link_to project.name, project
-    = link_to 'Github', project.github
     = link_to 'Website', project.website
+    = link_to 'Github', project.github
     - project.releases.each do |release|
         = link_to release.name, [release.project, release]

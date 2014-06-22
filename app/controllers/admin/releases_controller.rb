@@ -35,6 +35,7 @@ class Admin::ReleasesController < ApplicationController
   # PATCH/PUT /releases/1
   # PATCH/PUT /releases/1.json
   def update
+    @release.slug = nil
     respond_to do |format|
       if @release.update(release_params)
         format.html { redirect_to admin_project_releases_path(@release.project), notice: 'Release was successfully updated.' }

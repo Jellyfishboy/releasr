@@ -19,6 +19,8 @@ class Project < ActiveRecord::Base
 
     has_many :releases
 
+    validates :name, :github,               presence: true
+
     extend FriendlyId
     friendly_id :name, use: [:slugged, :finders]
 end

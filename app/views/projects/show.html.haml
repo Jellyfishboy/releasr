@@ -1,11 +1,8 @@
-%p#notice= notice
+= @project.name
+= link_to 'Website', @project.website
+= link_to 'Github', @project.github
 
-%p
-  %b Name:
-  = @project.name
-%p
-  %b Website:
-  = @project.website
-%p
-  %b Github:
-  = @project.github
+- @project.releases.each do |release|
+    
+    = link_to release.name, [release.project, release]
+    = raw(release.description)

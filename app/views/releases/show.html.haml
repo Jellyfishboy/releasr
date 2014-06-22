@@ -1,8 +1,2 @@
-%p#notice= notice
-
-%p
-  %b Name:
-  = @release.name
-%p
-  %b Description:
-  = @release.description
+= @release.name
+= raw(@release.description)
