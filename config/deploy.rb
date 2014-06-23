@@ -25,7 +25,7 @@ set :deploy_via, :remote_cache
 set :copy_exclude, [".git", ".DS_Store", ".gitignore", ".gitmodules"]
 set :use_sudo, false
 
-# For RBENV
+# For RVM
 default_run_options[:shell] = '/bin/bash --login'
 
 namespace :configure do
