@@ -15,6 +15,17 @@ module Releasr
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
     config.autoload_paths += %W(#{config.root}/lib)
     config.assets.precompile += ['administration.js', 'administration.css', 'modernizr/modernizr.js']
+    # Stops connecting to database while precompiling assets on deployment with capistrano
+    config.assets.initialize_on_precompile = true
+
+    # Enable the asset pipeline
+    config.assets.enabled = true
+
+    # Custom error pages
+    config.exceptions_app = self.routes
+
+    # Version of your assets, change this if you want to expire all your assets
+    config.assets.version = '1.0'
 
     config.generators do |g|
         g.test_framework :rspec,

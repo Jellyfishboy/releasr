@@ -26,9 +26,7 @@ set :copy_exclude, [".git", ".DS_Store", ".gitignore", ".gitmodules"]
 set :use_sudo, false
 
 # For RBENV
-set :default_environment, {
-  'PATH' => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
-}
+default_run_options[:shell] = '/bin/bash --login'
 
 namespace :configure do
   desc "Setup application configuration"
