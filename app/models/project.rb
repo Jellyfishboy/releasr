@@ -1,7 +1,7 @@
 # Project Documentation
 #
-# The accessory table allows administrators to add additional items to a product and it's overall price.
-# A product can have many accessories. The weight of accessories effects the end shipping calculation.
+# The project table contains a list of projects with associated website and github links
+# A project can have many unique releases
 
 # == Schema Information
 #

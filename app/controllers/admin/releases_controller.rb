@@ -1,6 +1,7 @@
 class Admin::ReleasesController < ApplicationController
   before_action :set_release, only: [:edit, :update, :destroy]
   before_action :set_project, only: [:index, :new, :edit, :create, :destroy]
+  before_filter :authenticate_user!
   layout 'admin'
 
   # GET /releases

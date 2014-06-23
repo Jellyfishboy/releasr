@@ -17,6 +17,7 @@ gem "unicorn", platforms: :ruby
 gem "rollbar", "~> 0.12.17"
 gem "whenever", require: false
 gem "sitemap_generator"
+gem "devise"
 
 group :production do
   gem 'mysql'

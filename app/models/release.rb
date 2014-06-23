@@ -1,7 +1,6 @@
 # Release Documentation
 #
-# The accessory table allows administrators to add additional items to a product and it's overall price.
-# A product can have many accessories. The weight of accessories effects the end shipping calculation.
+# The release table has a simple name and notes setup. It belongs to a project
 
 # == Schema Information
 #

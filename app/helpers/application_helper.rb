@@ -1,3 +1,5 @@
+require 'digest/md5'
+
 module ApplicationHelper
 
     def breadcrumbs
@@ -6,5 +8,9 @@ module ApplicationHelper
 
     def add_breadcrumb title, url
         breadcrumbs << { title: title, url: url }
+    end
+
+    def gravatar_url email
+        Digest::MD5.hexdigest(email)
     end
 end

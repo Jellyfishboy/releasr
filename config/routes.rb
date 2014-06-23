@@ -1,10 +1,11 @@
 Releasr::Application.routes.draw do
 
+  
     root to: 'home#index'
     resources :projects, only: :show do
         resources :releases, only: :show
     end
-  
+    devise_for :users, controllers: { sessions: "users/sessions" }
 
     namespace :admin do
         root to: 'projects#index'

@@ -17,7 +17,6 @@
   ],
   "dependencies": {
     "modernizr": "~2.8.2",
-    "icomoon": "~0.0.1",
     "normalize-css": "~3.0.1"
   }
 }
