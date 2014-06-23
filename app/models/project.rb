@@ -21,7 +21,8 @@ class Project < ActiveRecord::Base
 
     validates :name,                        uniqueness: { case_sensitive: false }
     validates :name, :github,               presence: true
-    validates_format_of :website, :github,  with: URI::regexp(%w(http https)), message: 'has an invalid URL. Please use HTTP procotol.'
+    validates :github,                      format: { with: URI::regexp(%w(http https)), message: 'has an invalid URL. Please use HTTP procotol.' }
+    validates :website,                     format: { with: URI::regexp(%w(http https)), message: 'has an invalid URL. Please use HTTP procotol.' }, allow_blank: true
 
     extend FriendlyId
     friendly_id :name, use: [:slugged, :finders]

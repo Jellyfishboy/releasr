@@ -30,7 +30,10 @@ GEM
     asset_sync (1.0.0)
       activemodel
       fog (>= 1.8.0)
+    bcrypt (3.1.7)
     bcrypt (3.1.7-x86-mingw32)
+    bcrypt-ruby (3.0.1)
+    bcrypt-ruby (3.0.1-x86-mingw32)
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -151,8 +154,7 @@ GEM
     mini_portile (0.6.0)
     minitest (4.7.5)
     multi_json (1.10.1)
-    mysql (2.9.1)
-    mysql (2.9.1-x86-mingw32)
+    mysql2 (0.3.16)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
@@ -275,6 +277,7 @@ PLATFORMS
 
 DEPENDENCIES
   asset_sync
+  bcrypt-ruby (~> 3.0.0)
   better_errors
   binding_of_caller
   bullet
@@ -294,7 +297,7 @@ DEPENDENCIES
   jquery-rails
   lograge
   meta_request
-  mysql
+  mysql2
   poltergeist
   pry
   quiet_assets

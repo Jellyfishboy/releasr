@@ -20,7 +20,7 @@ gem "sitemap_generator"
 gem "devise"
 
 group :production do
-  gem 'mysql'
+  gem 'mysql2', platforms: :ruby
   gem 'lograge'
 end
 
@@ -51,3 +51,5 @@ end
 group :development, :test do
   gem "pry"
 end
+
+gem 'bcrypt-ruby', '~> 3.0.0'
