@@ -24,7 +24,8 @@ class Admin::ReleasesController < ApplicationController
     @release = @project.releases.build(release_params)
     respond_to do |format|
       if @release.save
-        format.html { redirect_to admin_project_releases_url(@project), notice: 'Release was successfully created.' }
+        flash[:success] = 'Release was successfully created.'
+        format.html { redirect_to admin_project_releases_url(@project) }
         format.json { render action: 'show', status: :created, location: @release }
       else
         format.html { render action: 'new' }
@@ -39,7 +40,8 @@ class Admin::ReleasesController < ApplicationController
     @release.slug = nil
     respond_to do |format|
       if @release.update(release_params)
-        format.html { redirect_to admin_project_releases_url(@release.project), notice: 'Release was successfully updated.' }
+        flash[:success] = 'Release was successfully updated.'
+        format.html { redirect_to admin_project_releases_url(@release.project) }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -53,6 +55,7 @@ class Admin::ReleasesController < ApplicationController
   def destroy
     @release.destroy
     respond_to do |format|
+      flash[:success] = 'Release was successfully deleted'
       format.html { redirect_to admin_project_releases_url(@project) }
       format.json { head :no_content }
     end
@@ -70,6 +73,6 @@ class Admin::ReleasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def release_params
-      params.require(:release).permit(:name, :slug, :description, :project_id)
+      params.require(:release).permit(:name, :slug, :notes, :project_id)
     end
 end

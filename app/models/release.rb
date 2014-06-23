@@ -10,7 +10,7 @@
 #  id                   :integer          not null, primary key
 #  name                 :string(255)      
 #  slug                 :string(255)  
-#  description          :text          
+#  notes                :text          
 #  project_id           :integer          
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
@@ -19,9 +19,9 @@ class Release < ActiveRecord::Base
 
     belongs_to :project
 
-    validates :name,                                uniqueness: true
-    validates :name, :description,                  presence: true
-    validates :description,                         length: { minimum: 10, message: :too_short }
+    validates :name,                                uniqueness: { scope: :project_id }
+    validates :name, :notes,                        presence: true
+    validates :notes,                               length: { minimum: 10, message: :too_short }
 
     default_scope { order('created_at DESC') }
 

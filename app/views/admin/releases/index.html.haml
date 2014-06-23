@@ -1,21 +1,28 @@
 - content_for :breadcrumb, @project.name
 - content_for :title, "#{@project.name} releases"
-%h1= "#{@project.name} releases"
 
-= link_to 'New Release', new_admin_project_release_path, :class => 'btn btn-success'
-%table
-  %tr
-    %th Name
-    %th Description
-    %th
-    %th
-    %th
+.twelvecol
+  .page-header
+    = link_to new_admin_project_release_path, :class => "btn btn-blue btn-large", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Add release" do
+      %i.icon-plus
+    %h2.widget.widget-header= "#{@project.name} releases"
+  - if @releases.empty?
+    %p= "You don't have any releases for #{@project.name} yet."
+  - else
+    .table-responsive
+      %table.table.table-striped.table-bordered.table-hover
+        %tr
+          %th Name
+          %th Notes
+          %th
 
-  - @releases.each do |release|
-    %tr
-      %td= link_to release.name, [release.project, release]
-      %td= raw(release.description)
-      %td.btn.btn-success= link_to 'Edit', edit_admin_project_release_path(release.project, release)
-      %td.btn.btn-danger= link_to 'Destroy', admin_project_release_path(release.project, release), :method => :delete, :data => { :confirm => 'Are you sure?' }
-
+        - @releases.each do |release|
+          %tr
+            %td= link_to release.name, [release.project, release]
+            %td= raw(release.notes)
+            %td.table-actions
+              = link_to edit_admin_project_release_path(release.project, release) do
+                %span.icon-pencil
+              = link_to admin_project_release_path(release.project, release), :method => :delete, :data => { :confirm => 'Are you sure?' } do
+                %span.icon-remove
 

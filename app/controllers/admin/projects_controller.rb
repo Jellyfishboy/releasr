@@ -24,7 +24,8 @@ class Admin::ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to admin_root_url, notice: 'Project was successfully created.' }
+        flash[:success] = 'Project was successfully created.'
+        format.html { redirect_to admin_root_url }
         format.json { render action: 'show', status: :created, location: @project }
       else
         format.html { render action: 'new' }
@@ -39,7 +40,8 @@ class Admin::ProjectsController < ApplicationController
     @project.slug = nil
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to admin_root_url, notice: 'Project was successfully updated.' }
+        flash[:success] = 'Project was successfully updated.'
+        format.html { redirect_to admin_root_url }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -53,6 +55,7 @@ class Admin::ProjectsController < ApplicationController
   def destroy
     @project.destroy
     respond_to do |format|
+      flash[:success] = 'Project was successfully deleted.'
       format.html { redirect_to admin_root_url }
       format.json { head :no_content }
     end

@@ -1,7 +1,7 @@
 %ul#breadcrumbs
     - if params[:controller] == 'admin/projects' && params[:action] == 'index'
-        %li
-            Projects
+        %li.current
+            Projects       
     - else
         - breadcrumbs.each do |b|
             %li

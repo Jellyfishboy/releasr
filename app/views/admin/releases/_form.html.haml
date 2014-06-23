@@ -1,16 +1,22 @@
-= form_for [:admin, @project, @release] do |f|
-  - if @release.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@release.errors.count, "error")} prohibited this release from being saved:"
-      %ul
-        - @release.errors.full_messages.each do |msg|
-          %li= msg
+.eightcol
+  .page-header
+    %h2.widget.widget-header= "#{yield :breadcrumb} release"
+  = form_for [:admin, @project, @release], html: { :class => 'form' } do |f|
+    - if @release.errors.any?
+      #errors
+        %ul
+          - @release.errors.full_messages.each do |msg|
+            %li
+              %i.icon-cancel-circle
+              = msg  
+    %fieldset.widget.widget-content.widget-last
+      .form-group
+        = f.label :name
+        = f.text_field :name, :class => 'form-control'
+      .form-group
+        = f.label :notes
+        = f.text_area :notes, :class => 'form-control', rows: 10
+    .form-action
+      = f.submit 'Save', :class => 'btn btn-blue btn-large'
+.fourcol.last
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :description
-    = f.text_area :description
-  .actions
-    = f.submit 'Save'

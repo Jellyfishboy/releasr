@@ -4,6 +4,6 @@ FactoryGirl.define do
   factory :release do
     name "MyString"
     slug "MyString"
-    description "MyText"
+    notes "MyText"
   end
 end

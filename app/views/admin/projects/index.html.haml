@@ -1,21 +1,37 @@
 - content_for :title, 'Listing projects'
-%h1 Listing projects
 
-= link_to 'New Project', new_admin_project_path, :class => 'btn btn-success'
-%table
-  %tr
-    %th Name
-    %th Website
-    %th Github
-    %th
-    %th
-    %th
+.twelvecol
+  .page-header
+    = link_to new_admin_project_path, :class => 'btn btn-blue btn-large', "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Add project" do
+      %i.icon-plus
+    %h2.widget.widget-header Projects
+  - if @projects.empty?
+    %p You don't have any projects yet.
+  - else
+        
+    .table-responsive
+      %table.table.table-striped.table-bordered.table-hover
+        %tr
+          %th Name
+          %th Website
+          %th Github
+          %th No. of releases
+          %th Latest release
+          %th
 
-  - @projects.each do |project|
-    %tr
-      %td= link_to project.name, project
-      %td= link_to project.website, project.website
-      %td= link_to project.github, project.github
-      %td.btn.btn-primary= link_to 'Releases', admin_project_releases_path(project)
-      %td.btn.btn-success= link_to 'Edit', edit_admin_project_path(project)
-      %td.btn.btn-danger= link_to 'Destroy', admin_project_path(project), :method => :delete, :data => { :confirm => 'Are you sure?' }
+        - @projects.each do |project|
+          %tr
+            %td= link_to project.name, project
+            %td= link_to project.website, project.website, target: '_blank'
+            %td= link_to project.github, project.github, target: '_blank'
+            %td= project.releases.count
+            %td= link_to project.releases.first.name, [project, project.releases.last] unless project.releases.empty?
+            %td
+              = link_to admin_project_releases_path(project) do
+                %span.icon-file-3
+              = link_to edit_admin_project_path(project) do
+                %span.icon-pencil
+              = link_to admin_project_path(project), :method => :delete, :data => { :confirm => 'Are you sure?' } do
+                %span.icon-remove
+              
+              

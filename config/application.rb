@@ -14,6 +14,7 @@ module Releasr
   class Application < Rails::Application
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
     config.autoload_paths += %W(#{config.root}/lib)
+    config.assets.precompile += ['administration.js', 'administration.css', 'modernizr/modernizr.js']
 
     config.generators do |g|
         g.test_framework :rspec,
