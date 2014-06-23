@@ -20,6 +20,9 @@ module Releasr
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    config.encoding = "utf-8"
+
+    config.assets.expire_after 2.weeks
 
     # Custom error pages
     config.exceptions_app = self.routes
