@@ -1,0 +1,24 @@
+!!!
+%html
+    %head
+        %title= "#{yield(:title)} - #{Settings.app.name} administration"
+        = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+        = javascript_include_tag "application", "data-turbolinks-track" => true
+        = csrf_meta_tags
+    %body
+        .container
+            .navbar.navbar-default{:role => "navigation"}
+                .container-fluid
+                    .navbar-header
+                        %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+                            %span.sr-only Toggle navigation
+                            %span.icon-bar
+                            %span.icon-bar
+                            %span.icon-bar
+                        = link_to Settings.app.name, admin_root_path, :class => 'navbar-brand'
+                    .navbar-collapse.collapse
+                        %ul.nav.navbar-nav.navbar-right
+                            %li
+                                %a{:href => "../navbar-fixed-top/"} Logout
+            = render partial: 'shared/breadcrumbs'
+            = yield

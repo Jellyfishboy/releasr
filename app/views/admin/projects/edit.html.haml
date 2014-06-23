@@ -1,3 +1,6 @@
-%h1= "Editing #{@project.name}"
+- content_for :breadcrumb, 'Edit'
+- content_for :title, 'Edit project'
+
+%h1= "Edit project"
 
 = render 'form'

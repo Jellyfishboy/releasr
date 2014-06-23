@@ -15,6 +15,7 @@ gem "asset_sync"
 gem "unicorn", platforms: :ruby
 gem "rollbar", "~> 0.12.17"
 gem "whenever", require: false
+gem "sitemap_generator"
 
 group :production do
   gem 'mysql'

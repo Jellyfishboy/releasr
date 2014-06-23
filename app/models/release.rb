@@ -19,6 +19,7 @@ class Release < ActiveRecord::Base
 
     belongs_to :project
 
+    validates :name,                                uniqueness: true
     validates :name, :description,                  presence: true
     validates :description,                         length: { minimum: 10, message: :too_short }
 

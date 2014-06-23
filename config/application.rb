@@ -6,9 +6,14 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+require './lib/deep_struct'
+ 
+Settings = DeepStruct.new(YAML.load_file("./config/settings.yml"))
+
 module Releasr
   class Application < Rails::Application
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
+    config.autoload_paths += %W(#{config.root}/lib)
 
     config.generators do |g|
         g.test_framework :rspec,

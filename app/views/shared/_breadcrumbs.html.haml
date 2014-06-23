@@ -1,0 +1,9 @@
+%ul#breadcrumbs
+    - if params[:controller] == 'admin/projects' && params[:action] == 'index'
+        %li
+            Projects
+    - else
+        - breadcrumbs.each do |b|
+            %li
+                = link_to b[:title], b[:url]
+        %li.current= yield(:breadcrumb)

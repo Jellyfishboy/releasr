@@ -10,5 +10,6 @@
 
 vendor/assets/components
 node_modules
+config/settings.yml
 
 *.keep

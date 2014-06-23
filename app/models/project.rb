@@ -19,6 +19,7 @@ class Project < ActiveRecord::Base
 
     has_many :releases
 
+    validates :name,                        uniqueness: { case_sensitive: false }
     validates :name, :github,               presence: true
 
     extend FriendlyId

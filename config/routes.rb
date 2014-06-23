@@ -8,7 +8,7 @@ Releasr::Application.routes.draw do
 
     namespace :admin do
         root to: 'projects#index'
-        resources :projects, except: :show do
+        resources :projects, except: [:show, :index] do
             resources :releases, except: :show
         end
     end

@@ -1,6 +1,7 @@
 class Admin::ReleasesController < ApplicationController
   before_action :set_release, only: [:edit, :update, :destroy]
   before_action :set_project, only: [:index, :new, :edit, :create, :destroy]
+  layout 'admin'
 
   # GET /releases
   # GET /releases.json
@@ -23,7 +24,7 @@ class Admin::ReleasesController < ApplicationController
     @release = @project.releases.build(release_params)
     respond_to do |format|
       if @release.save
-        format.html { redirect_to admin_project_releases_path(@project), notice: 'Release was successfully created.' }
+        format.html { redirect_to admin_project_releases_url(@project), notice: 'Release was successfully created.' }
         format.json { render action: 'show', status: :created, location: @release }
       else
         format.html { render action: 'new' }
@@ -38,7 +39,7 @@ class Admin::ReleasesController < ApplicationController
     @release.slug = nil
     respond_to do |format|
       if @release.update(release_params)
-        format.html { redirect_to admin_project_releases_path(@release.project), notice: 'Release was successfully updated.' }
+        format.html { redirect_to admin_project_releases_url(@release.project), notice: 'Release was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -52,7 +53,7 @@ class Admin::ReleasesController < ApplicationController
   def destroy
     @release.destroy
     respond_to do |format|
-      format.html { redirect_to admin_project_releases_path(@project) }
+      format.html { redirect_to admin_project_releases_url(@project) }
       format.json { head :no_content }
     end
   end

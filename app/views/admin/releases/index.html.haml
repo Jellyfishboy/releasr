@@ -1,3 +1,5 @@
+- content_for :breadcrumb, @project.name
+- content_for :title, "#{@project.name} releases"
 %h1= "#{@project.name} releases"
 
 = link_to 'New Release', new_admin_project_release_path, :class => 'btn btn-success'

@@ -1,3 +1,4 @@
+- content_for :title, 'Listing projects'
 %h1 Listing projects
 
 = link_to 'New Project', new_admin_project_path, :class => 'btn btn-success'
@@ -17,4 +18,4 @@
       %td= link_to project.github, project.github
       %td.btn.btn-primary= link_to 'Releases', admin_project_releases_path(project)
       %td.btn.btn-success= link_to 'Edit', edit_admin_project_path(project)
-      %td.btn.btn-danger= link_to 'Destroy', project, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td.btn.btn-danger= link_to 'Destroy', admin_project_path(project), :method => :delete, :data => { :confirm => 'Are you sure?' }

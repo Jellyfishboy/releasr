@@ -1,3 +1,7 @@
+- add_breadcrumb @release.project.name, admin_project_releases_path(@release.project)
+- content_for :breadcrumb, 'New'
+- content_for :title, "New release - #{@release.project.name}"
+
 %h1 New release
 
 = render 'form'
