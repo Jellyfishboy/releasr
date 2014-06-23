@@ -33,27 +33,27 @@ set :default_environment, {
 namespace :configure do
   desc "Setup application configuration"
   task :application, :roles => :app do
-      run "yes | cp /home/configs/settings.yml /home/gimsonrobotics/current/config"
+      run "yes | cp /var/www/config/settings.yml /var/www/releasr/current/config"
   end
   desc "Setup database configuration"
   task :database, :roles => :app do
-    run "yes | cp /home/configs/database.yml /home/gimsonrobotics/current/config"
+    run "yes | cp /var/www/config/database.yml /var/www/releasr/current/config"
   end
 end
 namespace :database do
   desc "Migrate the database"
   task :migrate, :roles => :app do
-    run "cd /home/gimsonrobotics/current && RAILS_ENV=#{rails_env} bundle exec rake db:migrate"
+    run "cd /var/www/releasr/current && RAILS_ENV=#{rails_env} bundle exec rake db:migrate"
   end
 end
 namespace :assets do
     desc "Install Bower dependencies"
     task :bower, :roles => :app do
-      run "cd /home/gimsonrobotics/current && sudo bower install --allow-root"
+      run "cd /var/www/releasr/current && sudo bower install --allow-root"
     end 
     desc "Compile assets"
     task :compile, :roles => :app do
-        run "cd /home/gimsonrobotics/current && RAILS_ENV=#{rails_env} bundle exec rake assets:precompile"
+        run "cd /var/www/releasr/current && RAILS_ENV=#{rails_env} bundle exec rake assets:precompile"
     end
     desc "Generate sitemap"
     task :refresh_sitemaps do
