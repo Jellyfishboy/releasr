@@ -7,7 +7,7 @@ require 'rails/all'
 Bundler.require(:default, Rails.env)
 
 require './lib/deep_struct'
- 
+
 Settings = DeepStruct.new(YAML.load_file("./config/settings.yml"))
 
 module Releasr

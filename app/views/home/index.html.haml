@@ -1,7 +1,22 @@
-- @projects.each do |project|
-    
-    = link_to project.name, project
-    = link_to 'Website', project.website
-    = link_to 'Github', project.github
-    - project.releases.each do |release|
-        = link_to release.name, [release.project, release]
+- @projects.each_slice(2) do |slice|
+    .row
+        - slice.each_with_index do |project, index|
+            %div{ :class => index == 1 ? 'sixcol last' : 'sixcol'}
+                .project
+                    = link_to project do
+                        %h2= project.name
+                    .social
+                        = link_to project.github, target: '_blank' do
+                            %span.icon-github-3
+                        - unless project.website.blank?
+                            = link_to project.website, target: '_blank' do
+                                %span.icon-earth
+                    - if project.releases.empty?
+                        %p There are no releases yet for this project.
+                    - else
+                        %ul
+                            - project.releases.limit(10).each do |release|
+                                %li
+                                    = link_to release.name, [release.project, release]
+                                    %div= release.created_at.strftime(" #{release.created_at.day.ordinalize} %b %Y")
+                        .more= link_to 'More releases...', project if project.releases.count > 10

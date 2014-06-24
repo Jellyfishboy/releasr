@@ -1,0 +1,56 @@
+.project
+{
+    .social
+    {
+        font-size: 24px;
+        margin-bottom: 30px;
+
+        a:first-child
+        {
+            margin-right: 5px;
+        }
+    }
+    ul
+    {
+        list-style-type: none;
+        padding:0;
+        margin:0;
+
+        li
+        {
+            position: relative;
+            padding: 0 0 15px 30px;
+
+            a
+            {
+                font-size:20px;
+                color:$blue;
+            }
+            div
+            {
+                font-style: italic;
+                color:#7F7F7F;
+            }
+
+            &:before
+            {
+                font-family: 'icomoon';
+                content: "\e030";
+                speak: none;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+                position: absolute;
+                left:0;
+                top:8px;
+            }
+        }
+    }
+    .more
+    {
+        font-style: italic;
+    }
+}

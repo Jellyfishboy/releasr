@@ -1,9 +1,32 @@
 !!!
 %html
-  %head
-    %title Releasr
-    = stylesheet_link_tag :application, media: "all", "data-turbolinks-track" => true
-    = csrf_meta_tags
-  %body
-    = yield
-  = javascript_include_tag :application, "data-turbolinks-track" => true
+    %head
+        %meta{charset: "utf-8"}/
+        %title Releasr
+        %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+        %meta{content: "text/html; charset=US-ASCII", "http-equiv" => "Content-Type"}/
+        = stylesheet_link_tag :application, media: "all", "data-turbolinks-track" => true
+        = csrf_meta_tags
+        %link{href: 'http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700', rel: 'stylesheet', type: 'text/css' }
+        %link{href: "/stylesheets/font.css", media: "screen", rel: "stylesheet"}/
+        = javascript_include_tag "modernizr/modernizr"
+    %body
+        .main
+            .container
+                = yield
+        %footer
+            .container
+                .row
+                    .twelvecol
+                        %p
+                            Copyright Tom Dallimore © - All rights reserved.
+                        %ul
+                            %li
+                                %a.icon-earth{href: 'http://www.tomdallimore.com', target: '_blank'}
+                            %li
+                                %a.icon-twitter{href: 'http://twitter.com/billy_dallimore', target: '_blank'}
+                            %li
+                                %a.icon-stackoverflow{href: 'http://stackoverflow.com/users/1459787/jellyfishboy', target: '_blank'}
+                            %li
+                                %a.icon-facebook{href: 'https://www.facebook.com/tomdallimoredev', target: '_blank'}
+    = javascript_include_tag :application, "data-turbolinks-track" => true

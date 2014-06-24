@@ -1,0 +1,59 @@
+html
+{
+    font-size: 62.5%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    font-family: sans-serif;
+}
+body
+{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333;
+    background: #FAFAFA;
+}
+h2
+{
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size:70px;
+    position: relative;
+    padding-bottom: 5px;
+    margin: 30px 0 20px;
+    display: inline-block;
+
+    &:after
+    {
+        position: absolute;
+        content: "";
+        bottom:0;
+        left:0;
+        width:70px;
+        border-bottom:5px solid #333;
+    }
+}
+a
+{
+    color:#333;
+    text-decoration: none;
+    @include transition-property(color);
+    @include transition-duration(0.4s);
+    @include transition-timing-function(ease-in);
+
+    &:hover
+    {
+        color:$blue;
+    }
+}
+p
+{
+    margin:10px 0 0;
+}
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+}
+*:before, *:after {
+    @include box-sizing(border-box);
+}

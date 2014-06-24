@@ -1,0 +1,38 @@
+footer
+{
+    margin-top: 50px;
+    
+    .container
+    {
+        .row
+        {
+            border-top:1px solid #ccc;
+
+            p
+            {
+                float:left;
+                margin:10px 0;
+                font-size: 12px;
+            }
+            ul
+            {
+                list-style-type: none;
+                float: right;
+                padding:0;
+                margin: 10px 0 0;
+
+                li
+                {
+                    display: inline-block;
+                    margin-right: 5px;
+                    font-size: 16px;
+
+                    &:last-child
+                    {
+                        margin-right: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
