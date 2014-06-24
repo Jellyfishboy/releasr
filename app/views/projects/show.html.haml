@@ -1,8 +1,18 @@
-= @project.name
-= link_to 'Website', @project.website
-= link_to 'Github', @project.github
-
-- @project.releases.each do |release|
-    
-    = link_to release.name, [release.project, release]
-    = raw(release.notes)
+.row
+    .twelvecol
+        .project
+            %h2= @project.name
+            .social
+                = link_to @project.github, target: '_blank' do
+                    %span.icon-github-3
+                - unless @project.website.blank?
+                    = link_to @project.website, target: '_blank' do
+                        %span.icon-earth
+            - if @project.releases.empty?
+                %p There are no releases yet for this @project.
+            - else
+                %ul
+                    - @project.releases.each do |release|
+                        %li
+                            = link_to release.name, [release.project, release]
+                            %div= release.created_at.strftime(" #{release.created_at.day.ordinalize} %b %Y")
