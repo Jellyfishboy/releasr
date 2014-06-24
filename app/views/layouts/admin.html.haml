@@ -11,6 +11,7 @@
     = stylesheet_link_tag :administration, "data-turbolinks-track" => true
     %link{href: "http://fonts.googleapis.com/css?family=Roboto:400,500,700,300", rel: "stylesheet", type: "text/css"}/
     %link{href: "/stylesheets/font.css", media: "screen", rel: "stylesheet"}/
+    = javascript_include_tag :administration, "data-turbolinks-track" => true
     = javascript_include_tag "modernizr/modernizr"
   %body
     %input#menu-trigger-input.menu-trigger-handler{name: "menu-trigger-input", onclick: "null", type: "checkbox"}/
@@ -43,5 +44,3 @@
                 = raw flash[:success]
             = render partial: 'shared/breadcrumbs'
             = yield
-
-    = javascript_include_tag :administration
