@@ -9,6 +9,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'compass-rails'
 gem 'jquery-rails'
+gem "haml"
+gem "haml-rails"
 
 gem 'turbolinks'
 gem "friendly_id", "~> 5.0.0"
@@ -28,12 +30,10 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem "meta_request"
-  gem "haml-rails"
   gem "quiet_assets"
   # gem "rack-mini-profiler"
   gem "capistrano", "~> 2.15"
   gem "bullet"
-  gem "haml"
   gem "capistrano-unicorn", require: false, platforms: :ruby
 end
 
