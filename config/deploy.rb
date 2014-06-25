@@ -58,16 +58,6 @@ namespace :assets do
       run "cd #{latest_release} && RAILS_ENV=#{rails_env} bundle exec rake sitemap:refresh"
     end
 end
-namespace :rollbar do
-  desc "Notify Rollbar of deployment"
-  task :notify, :roles => :app do
-    set :revision, `git log -n 1 --pretty=format:"%H"`
-    set :local_user, `whoami`
-    set :rollbar_token, ENV['RELEASR_ROLLBAR_ACCESS_TOKEN']
-    rails_env = fetch(:rails_env, 'production')
-    run "curl https://api.rollbar.com/api/1/deploy/ -F access_token=#{rollbar_token} -F environment=#{rails_env} -F revision=#{revision} -F local_username=#{local_user} >/dev/null 2>&1", :once => true
-  end
-end
 
 # additional settings
 default_run_options[:pty] = true
@@ -79,4 +69,3 @@ after 'database:migrate', 'assets:bower'
 after 'assets:bower', 'assets:compile'
 after 'assets:compile', 'assets:refresh_sitemaps'
 after 'assets:refresh_sitemaps', 'unicorn:restart'
-# after 'rollbar:notify', 'unicorn:restart'

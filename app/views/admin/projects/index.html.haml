@@ -22,8 +22,8 @@
         - @projects.each do |project|
           %tr
             %td= link_to project.name, project
-            %td= link_to project.website, project.website, target: '_blank'
             %td= link_to project.github, project.github, target: '_blank'
+            %td= link_to project.website, project.website, target: '_blank'
             %td= project.releases.count
             %td= link_to project.releases.first.name, [project, project.releases.last] unless project.releases.empty?
             %td
