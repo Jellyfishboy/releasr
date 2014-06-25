@@ -20,6 +20,7 @@ gem "rollbar", "~> 0.12.17"
 gem "whenever", require: false
 gem "sitemap_generator"
 gem "devise"
+gem 'fast_blank'
 
 group :production do
   gem 'mysql2', platforms: :ruby
