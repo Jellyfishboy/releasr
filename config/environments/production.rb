@@ -35,10 +35,6 @@ Releasr::Application.configure do
   # Version of your assets, change this if you want to expire all your assets.
   config.assets.version = '1.0'
 
-  config.action_controller.asset_host = Settings.aws.cloudfront.host.app
-
-  config.assets.prefix = Settings.aws.cloudfront.prefix
-
   config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' 
 
   config.lograge.enabled = true

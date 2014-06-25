@@ -12,9 +12,6 @@ gem 'jquery-rails'
 
 gem 'turbolinks'
 gem "friendly_id", "~> 5.0.0"
-gem "asset_sync"
-gem 'fog'
-gem 'unf'
 gem "unicorn", platforms: :ruby
 gem "rollbar", "~> 0.12.17"
 gem "whenever", require: false
