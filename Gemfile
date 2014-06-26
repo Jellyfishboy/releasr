@@ -11,6 +11,7 @@ gem 'compass-rails'
 gem 'jquery-rails'
 gem "haml"
 gem "haml-rails"
+gem 'asset_sync'
 
 gem 'turbolinks'
 gem "friendly_id", "~> 5.0.0"
