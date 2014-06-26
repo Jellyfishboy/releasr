@@ -10,7 +10,7 @@ For development purposes, this repository requires the use of [Bower](http://bow
 
 Bower is a package manager tool (much like [NuGet](http://www.nuget.org/) or [Bundler](http://bundler.io/)) which can manage your third party asset library for you. You can find information on using and installing Bower over at their [github](https://github.com/bower/bower) page.
 
-Furthermore, you will need **npm** for both of these tools to function. You can find a quick and easy installation guide over at the [npm github](https://github.com/npm/npm).
+Lastly, you will need **npm** in order to install Bower. You can find a quick and easy installation guide over at the [npm github](https://github.com/npm/npm).
 
 ##Resolving dependencies
 
