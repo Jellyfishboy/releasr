@@ -43,6 +43,9 @@ Please note, if you would like to use a different port, you can the rails server
 * Commit (do not change version or history)
 * Send a pull request against the *master* branch
 
+##Credits
+[Icomoon](http://icomoon.io/) - Iconography   
+
 ##Copyright
 
 Copyright (c) 2014 Tom Dallimore. See LICENSE for details.
