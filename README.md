@@ -1,8 +1,9 @@
 #releasr
 
 
-Simple release notes application, which has been designed to work with the Atlassian JIRA release engine.
+Simple release notes application, with a custom design. It is using the open source [Soca](https://github.com/Jellyfishboy/soca) responsive administration template.
 
+##Getting started
 http://release.tomdallimore.com
 
 ##Copyright
