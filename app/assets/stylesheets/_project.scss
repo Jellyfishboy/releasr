@@ -3,12 +3,18 @@
     .social
     {
         font-size: 24px;
-        margin-bottom: 30px;
+       
 
         a:first-child
         {
             margin-right: 5px;
         }
+    }
+    p.desc
+    {
+        height:60px;
+        padding-bottom: 30px;
+        max-width: 330px;
     }
     ul
     {

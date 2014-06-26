@@ -13,12 +13,13 @@
                         - unless project.website.blank?
                             = link_to project.website, target: '_blank' do
                                 %span.icon-earth
-                    - if project.releases.empty?
+                    %p.desc= project.description
+                    - if project.releases.complete.empty?
                         %p There are no releases yet for this project.
                     - else
                         %ul
-                            - project.releases.limit(10).each do |release|
+                            - project.releases.complete.limit(10).each do |release|
                                 %li
                                     = link_to release.name, [release.project, release]
                                     %div= release.created_at.strftime(" #{release.created_at.day.ordinalize} %b %Y")
-                        .more= link_to 'More releases...', project if project.releases.count > 10
+                        .more= link_to 'More releases...', project if project.releases.complete.count > 10

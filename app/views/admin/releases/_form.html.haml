@@ -16,6 +16,11 @@
       .form-group
         = f.label :notes
         = f.text_area :notes, :class => 'form-control', rows: 10
+      .form-group
+        .checkbox
+          %label
+            = f.check_box :draft
+            Draft
     .form-action
       = f.submit 'Save', :class => 'btn btn-blue btn-large'
 .fourcol.last

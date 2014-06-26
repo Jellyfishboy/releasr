@@ -14,12 +14,14 @@
         %tr
           %th Name
           %th Notes
+          %th Draft
           %th
 
         - @releases.each do |release|
           %tr
             %td= link_to release.name, [release.project, release]
             %td= raw(release.notes)
+            %td= release.draft ? "<i class='icon-checkmark icon-green'></i>".html_safe : "<i class='icon-close icon-red'></i>".html_safe
             %td.table-actions
               = link_to edit_admin_project_release_path(release.project, release) do
                 %span.icon-pencil

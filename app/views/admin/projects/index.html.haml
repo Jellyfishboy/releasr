@@ -13,6 +13,7 @@
       %table.table.table-striped.table-bordered.table-hover
         %tr
           %th Name
+          %th Description
           %th Github
           %th Website
           %th No. of releases
@@ -22,6 +23,7 @@
         - @projects.each do |project|
           %tr
             %td= link_to project.name, project
+            %td= project.description
             %td= link_to project.github, project.github, target: '_blank'
             %td= link_to project.website, project.website, target: '_blank'
             %td= project.releases.count

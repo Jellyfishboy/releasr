@@ -10,7 +10,8 @@
 #  name                 :string(255)      
 #  slug                 :string(255)  
 #  notes                :text          
-#  project_id           :integer          
+#  project_id           :integer      
+#  draft                :boolean          default(true)
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #
@@ -23,6 +24,8 @@ class Release < ActiveRecord::Base
     validates :notes,                               length: { minimum: 10, message: :too_short }
 
     default_scope { order('created_at DESC') }
+
+    scope :complete, -> { where('draft != ?', true) }
 
     extend FriendlyId
     friendly_id :name, use: [:slugged, :finders]

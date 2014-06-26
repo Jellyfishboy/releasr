@@ -9,4 +9,14 @@
         margin:10px 0;
         font-weight: 500;
     }
+    tbody
+    {
+        tr
+        {
+            td:last-child
+            {
+                min-width: 60px;
+            }
+        }
+    }
 }
