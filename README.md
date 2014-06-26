@@ -1,7 +1,7 @@
 #RELEASR
 
 
-Simple release notes application, with a custom design. It is using the open source [Soca](https://github.com/Jellyfishboy/soca) responsive administration template.
+Simple release notes application, with a custom design. It utilises the open source [Soca](https://github.com/Jellyfishboy/soca) responsive administration template.
 
 [Live site](http://release.tomdallimore.com)
 ##Getting started
