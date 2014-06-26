@@ -2,7 +2,8 @@
 %html
     %head
         %meta{charset: "utf-8"}/
-        %title Releasr
+        %title= "#{yield :title} - Release notes for open source projects by Tom Dallimore"
+        %meta{content: "#{yield :description}", name: 'description' }
         %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
         %meta{content: "text/html; charset=US-ASCII", "http-equiv" => "Content-Type"}/
         = stylesheet_link_tag :application, media: "all", "data-turbolinks-track" => true

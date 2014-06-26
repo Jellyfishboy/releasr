@@ -1,7 +1,9 @@
+- content_for :title, @project.name
+- content_for :description, @project.description
 .row
     .twelvecol
         .project
-            %h2= @project.name
+            %h1= @project.name
             .social
                 = link_to @project.github, target: '_blank' do
                     %span.icon-github-3

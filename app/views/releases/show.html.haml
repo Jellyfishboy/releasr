@@ -1,7 +1,10 @@
+- content_for :title, "#{@release.name} - #{@release.project.name}"
+- content_for :description, "Release notes for #{@release.name} in the project #{@release.project.name}."
+
 .row
     .twelvecol
         .project
-            %h2= @release.project.name
+            %h1= @release.project.name
             .version
                 %span= @release.name
                 %div= @release.created_at.strftime(" #{@release.created_at.day.ordinalize} %b %Y")

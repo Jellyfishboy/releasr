@@ -1,9 +1,12 @@
+- content_for :title, 'Home'
+- content_for :description, 'Release notes for open source projects by Tom Dallimore.'
+
 - @projects.each_slice(3) do |slice|
     .row
         - slice.each_with_index do |project, index|
             %div{ :class => index == 2 ? 'fourcol last' : 'fourcol'}
                 .project
-                    %h2= project.name
+                    %h1= project.name
                     .social
                         = link_to project.github, target: '_blank' do
                             %span.icon-github-3
