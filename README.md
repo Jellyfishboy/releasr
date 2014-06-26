@@ -1,7 +1,7 @@
 #RELEASR
 
 
-Simple release notes application, with a custom design. It is using the open source [Soca](https://github.com/Jellyfishboy/soca) responsive administration template.
+Simple release notes application, with a custom design. It utilises the open source [Soca](https://github.com/Jellyfishboy/soca) responsive administration template.
 
 [Live site](http://release.tomdallimore.com)
 ##Getting started
@@ -47,6 +47,9 @@ Please note, if you would like to use a different port, you can the rails server
 * Create your feature or bug fix
 * Commit (do not change version or history)
 * Send a pull request against the *master* branch
+
+##Credits
+[Icomoon](http://icomoon.io/) - Iconography   
 
 ##Copyright
 
