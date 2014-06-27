@@ -4,6 +4,9 @@
 Simple release notes application, with a custom design. It utilises the open source [Soca](https://github.com/Jellyfishboy/soca) responsive administration template.
 
 [Live site](http://release.tomdallimore.com)
+
+[Release notes](http://release.tomdallimore.com)
+
 ##Getting started
 
 For development purposes, this repository requires the use of [Bower](http://bower.io/) in order to run the application.
@@ -54,6 +57,7 @@ Please note, if you would like to use a different port, you can the rails server
 
 ##Credits
 [Icomoon](http://icomoon.io/) - Iconography   
+[Bootstrap-datepicker](http://www.eyecon.ro/bootstrap-datepicker/) - Datepicker plugin
 
 ##Copyright
 
