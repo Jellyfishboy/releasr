@@ -48,6 +48,12 @@ Please note, if you would like to use a different port, you can the rails server
 ![Project](http://tomdallimore.com/wp-content/uploads/2014/06/releasr-4.png "Project")  
 ![Releases](http://tomdallimore.com/wp-content/uploads/2014/06/releasr-5.png "Releases") 
 
+## Versioning
+
+RELEASR follows Semantic Versioning 2.0 as defined at
+<http://semver.org>.
+
+
 ##How to contribute
 
 * Fork the project
