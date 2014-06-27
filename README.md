@@ -1,5 +1,6 @@
 #RELEASR
 
+[![Build Status](https://travis-ci.org/Jellyfishboy/releasr.svg?branch=master)](https://travis-ci.org/Jellyfishboy/releasr)
 
 Simple release notes application, with a custom design. It utilises the open source [Soca](https://github.com/Jellyfishboy/soca) responsive administration template.
 
