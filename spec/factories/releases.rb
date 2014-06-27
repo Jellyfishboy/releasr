@@ -1,9 +1,10 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
-  factory :release do
-    name "MyString"
-    slug "MyString"
-    notes "MyText"
-  end
+    factory :release do
+        name { Faker::Name.name}
+        notes { Faker::Lorem.characters(20) }
+        draft { false }
+        date { Date.today }
+
+        association :project
+    end
 end

@@ -21,7 +21,7 @@
         - @releases.each do |release|
           %tr
             %td= link_to release.name, [release.project, release]
-            %td= release.date.strftime(" #{release.date.day.ordinalize} %b %Y")
+            %td= release.date.strftime(" #{release.date.day.ordinalize} %b %Y") if release.date
             %td= raw(release.notes)
             %td= release.draft ? "<i class='icon-checkmark icon-green'></i>".html_safe : "<i class='icon-close icon-red'></i>".html_safe
             %td.table-actions
