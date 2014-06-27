@@ -51,6 +51,7 @@ end
 
 group :development, :test do
   gem "pry"
+  gem "pg"
 end
 
 gem 'bcrypt-ruby', '~> 3.0.0'
