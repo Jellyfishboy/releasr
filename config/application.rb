@@ -13,8 +13,8 @@ Settings = DeepStruct.new(YAML.load_file("./config/settings.yml"))
 module Releasr
   class Application < Rails::Application
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
+    
     config.autoload_paths += %W(#{config.root}/lib)
-    config.assets.precompile += ['administration.js', 'administration.css', 'modernizr/modernizr.js']
     # Stops connecting to database while precompiling assets on deployment with capistrano
     config.assets.initialize_on_precompile = true
 

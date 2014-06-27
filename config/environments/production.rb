@@ -1,6 +1,7 @@
 Releasr::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.assets.precompile += ['administration.js', 'administration.css', 'modernizr/modernizr.js', 'soca.datepicker.js']
   # Code is not reloaded between requests.
   config.cache_classes = true
 
