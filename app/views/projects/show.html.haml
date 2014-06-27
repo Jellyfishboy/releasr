@@ -18,4 +18,4 @@
                     - @project.releases.complete.each do |release|
                         %li
                             = link_to release.name, [release.project, release]
-                            %div= release.created_at.strftime(" #{release.created_at.day.ordinalize} %b %Y")
+                            %div= release.date.strftime(" #{release.date.day.ordinalize} %b %Y")

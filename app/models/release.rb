@@ -19,11 +19,11 @@ class Release < ActiveRecord::Base
 
     belongs_to :project
 
-    validates :name,                                uniqueness: { scope: :project_id }
-    validates :name, :notes,                        presence: true
-    validates :notes,                               length: { minimum: 10, message: :too_short }
+    validates :name,                                        uniqueness: { scope: :project_id }
+    validates :name, :notes, :date,                         presence: true
+    validates :notes,                                       length: { minimum: 10, message: :too_short }
 
-    default_scope { order('created_at DESC') }
+    default_scope { order('date DESC') }
 
     scope :complete, -> { where('draft != ?', true) }
 

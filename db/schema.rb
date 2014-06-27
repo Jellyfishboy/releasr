@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140626105636) do
+ActiveRecord::Schema.define(version: 20140627095057) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20140626105636) do
     t.datetime "updated_at"
     t.integer  "project_id"
     t.boolean  "draft",      default: true
+    t.datetime "date"
   end
 
   create_table "users", force: true do |t|

@@ -7,5 +7,5 @@
             %h1= @release.project.name
             .version
                 %span= @release.name
-                %div= @release.created_at.strftime(" #{@release.created_at.day.ordinalize} %b %Y")
+                %div= @release.date.strftime(" #{@release.date.day.ordinalize} %b %Y")
             .notes= raw(@release.notes)

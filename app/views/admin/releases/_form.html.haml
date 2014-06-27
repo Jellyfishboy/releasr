@@ -14,6 +14,9 @@
         = f.label :name
         = f.text_field :name, :class => 'form-control'
       .form-group
+        = f.label :date
+        = f.text_field :date, :class => 'form-control datepicker', :value => (@release.date.blank? ? '' : @release.date.strftime('%d/%m/%Y'))
+      .form-group
         = f.label :notes
         = f.text_area :notes, :class => 'form-control', rows: 10
       .form-group
