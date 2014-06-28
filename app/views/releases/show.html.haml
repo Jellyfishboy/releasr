@@ -5,6 +5,14 @@
     .twelvecol
         .project
             %h1= @release.project.name
+            .social
+                - unless @release.project.github.blank?
+                    = link_to @release.project.github, target: '_blank' do
+                        %span.icon-github-3
+                - unless @release.project.website.blank?
+                    = link_to @release.project.website, target: '_blank' do
+                        %span.icon-earth
+            %p.desc= @release.project.description
             .version
                 %span= @release.name
                 %div= @release.date.strftime(" #{@release.date.day.ordinalize} %b %Y")
