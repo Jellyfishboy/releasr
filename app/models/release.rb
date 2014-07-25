@@ -31,7 +31,4 @@ class Release < ActiveRecord::Base
     extend FriendlyId
     friendly_id :name, use: [:slugged, :finders]
 
-    def published?
-        return true unless draft?
-    end
 end

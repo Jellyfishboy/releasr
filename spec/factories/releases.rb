@@ -2,7 +2,7 @@ FactoryGirl.define do
     factory :release do
         name { Faker::Name.name}
         notes { Faker::Lorem.characters(20) }
-        draft { false }
+        state { 'draft' }
         date { Date.today }
 
         association :project
