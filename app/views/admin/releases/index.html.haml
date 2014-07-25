@@ -15,7 +15,7 @@
           %th Name
           %th Release date
           %th Notes
-          %th Draft
+          %th Published
           %th
 
         - @releases.each do |release|
@@ -23,7 +23,7 @@
             %td= link_to release.name, [release.project, release]
             %td= release.date.strftime(" #{release.date.day.ordinalize} %b %Y") if release.date
             %td= raw(release.notes)
-            %td= release.draft ? "<i class='icon-checkmark icon-green'></i>".html_safe : "<i class='icon-close icon-red'></i>".html_safe
+            %td= release.published? ? "<i class='icon-checkmark icon-green'></i>".html_safe : "<i class='icon-close icon-red'></i>".html_safe
             %td.table-actions
               = link_to edit_admin_project_release_path(release.project, release) do
                 %span.icon-pencil

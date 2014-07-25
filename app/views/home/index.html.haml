@@ -15,12 +15,12 @@
                             = link_to project.website, target: '_blank' do
                                 %span.icon-earth
                     %p.desc= project.description
-                    - if project.releases.complete.empty?
+                    - if project.releases.published.empty?
                         %p There are no releases yet for this project.
                     - else
                         %ul
-                            - project.releases.complete.limit(10).each do |release|
+                            - project.releases.published.limit(10).each do |release|
                                 %li
                                     = link_to release.name, [release.project, release]
                                     %div= release.date.strftime(" #{release.date.day.ordinalize} %b %Y")
-                        .more= link_to 'More releases...', project if project.releases.complete.count > 10
+                        .more= link_to 'More releases...', project if project.releases.published.count > 10

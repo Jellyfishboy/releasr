@@ -22,8 +22,8 @@
       .form-group
         .checkbox
           %label
-            = f.check_box :draft
-            Draft
+            = f.check_box :state, {}, 'published', 'draft'
+            Publish
     .form-action
       = f.submit 'Save', :class => 'btn btn-blue btn-large'
 .fourcol.last

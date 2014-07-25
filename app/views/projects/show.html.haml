@@ -16,7 +16,7 @@
                 %p There are no releases yet for this @project.
             - else
                 %ul
-                    - @project.releases.complete.each do |release|
+                    - @project.releases.published.each do |release|
                         %li
                             = link_to release.name, [release.project, release]
                             %div= release.date.strftime(" #{release.date.day.ordinalize} %b %Y")
