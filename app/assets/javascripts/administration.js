@@ -4,4 +4,5 @@
 //= require soca
 //= require bootstrap.min
 //= require bootstrap-datepicker/js/bootstrap-datepicker
-//= require soca.datepicker
+//= require soca.tools
+
