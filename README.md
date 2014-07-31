@@ -6,7 +6,7 @@ Simple release notes application, with a custom design. It utilises the open sou
 
 [Live site](http://release.tomdallimore.com)
 
-[Release notes](http://release.tomdallimore.com)
+[Release notes](http://release.tomdallimore.com/projects/releasr)
 
 ##Getting started
 
