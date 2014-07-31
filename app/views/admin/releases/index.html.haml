@@ -24,7 +24,7 @@
             %td= release.date.strftime(" #{release.date.day.ordinalize} %b %Y") if release.date
             %td= raw(release.notes)
             %td= release.published? ? "<i class='icon-checkmark icon-green'></i>".html_safe : "<i class='icon-close icon-red'></i>".html_safe
-            %td.table-actions
+            %td.triple-menu
               = link_to edit_admin_project_release_path(release.project, release) do
                 %span.icon-pencil
               = link_to admin_project_release_path(release.project, release), :method => :delete, :data => { :confirm => 'Are you sure?' } do

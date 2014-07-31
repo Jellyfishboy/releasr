@@ -28,7 +28,7 @@
             %td= link_to project.website, project.website, target: '_blank'
             %td= project.releases.count
             %td= link_to project.releases.first.name, [project, project.releases.last] unless project.releases.empty?
-            %td
+            %td.triple-menu
               = link_to admin_project_releases_path(project) do
                 %span.icon-file-3
               = link_to edit_admin_project_path(project) do
