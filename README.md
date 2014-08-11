@@ -51,7 +51,7 @@ Please note, if you would like to use a different port, you can the rails server
 
 ## Versioning
 
-RELEASR follows Semantic Versioning 2.0 as defined at
+Releasr follows Semantic Versioning 2.0 as defined at
 <http://semver.org>.
 
 
