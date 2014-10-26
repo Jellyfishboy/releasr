@@ -6,6 +6,7 @@ gem 'rails', '4.1.0'
 group :production do
   gem 'mysql2', platforms: :ruby
   gem 'lograge'
+  gem 'unicorn-worker-killer'
 end
 
 group :development do
