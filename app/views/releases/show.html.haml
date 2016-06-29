@@ -6,6 +6,10 @@
         .project
             %h1= @release.project.name
             .social
+                = link_to root_path do
+                    %span.icon-home
+                = link_to project_path(@release.project) do
+                    %span.icon-menu-2
                 - unless @release.project.github.blank?
                     = link_to @release.project.github, target: '_blank' do
                         %span.icon-github-3

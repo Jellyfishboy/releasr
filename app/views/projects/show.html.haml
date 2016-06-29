@@ -5,6 +5,8 @@
         .project
             %h1= @project.name
             .social
+                = link_to root_path do
+                    %span.icon-home
                 - unless @project.github.blank?
                     = link_to @project.github, target: '_blank' do
                         %span.icon-github-3
