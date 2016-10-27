@@ -1,8 +1,17 @@
 class ReleasesController < ApplicationController
 
-  # GET /releases/1
-  # GET /releases/1.json
-  def show
-    @release = Release.find(params[:id])
-  end
+    def show
+        set_project
+        set_release
+    end
+
+    private
+
+    def set_project
+        @project = Project.find(params[:project_id])
+    end
+
+    def set_release
+        @release ||= @project.releases.find(params[:id])
+    end
 end
